@@ -141,7 +141,7 @@ class BuyAndHoldStrategy(bt.Strategy):
 
 @app.post("/run-strategy")
 async def run_strategy(ticker: str = "HCC.NS", date: str = "2024-09-23", iterations: int = 50):
-    end_date = "2024-09-24"
+    end_date = "2024-09-26"
     data = yf.download(ticker, start=date, end=end_date, interval="1m")
 
     if data.empty:

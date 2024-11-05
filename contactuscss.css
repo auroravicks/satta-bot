@@ -1,0 +1,296 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
+
+/* Global */
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+body h1 {
+  color: #282f59;
+}
+body p {
+  color: #7c7c7c;
+}
+body a {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+/* Header */
+header {
+    
+  background-size: 100%;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+.navbar {
+    background: #4642FF;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  padding: 10px 50px;
+  align-items: center;
+}
+.navbar ul {
+  flex: 1;
+  text-align: right;
+}
+.navbar ul li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 25px;
+}
+
+.logo {
+  width: 180px;
+}
+.ctn {
+  padding: 10px 20px;
+  background:#4642FF;
+  border-radius: 50px;
+}
+.ctn:hover {
+  background: linear-gradient(
+    to bottom right,
+    rgb(95, 92, 255),
+    rgb(187, 145, 255)
+  );
+}
+.row {
+  display: flex;
+  align-items: center;
+  padding-top: 5rem;
+}
+.header-content,
+.hero-img {
+  flex-basis: 50%;
+  padding: 8rem;
+}
+.header-content h1 {
+  font-size: 6vmin;
+  margin-bottom: 30px;
+  margin-top: 7rem;
+  color: #4642ff;
+}
+.header-content p {
+  margin-bottom: 30px;
+}
+#scrolltp {
+    color: white;
+    background: tomato;
+    padding: 15px;
+    border-radius: 50%;
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    cursor: pointer;
+    transition: opacity 0.5s;
+  }
+  .theme {
+    position: absolute;
+    top: 30px;
+    left: 30%;
+  }
+  .label {
+    width: 50px;
+    height: 20px;
+    background: rgb(235, 235, 235);
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+    cursor: pointer;
+  }
+  .label .ball {
+    width: 15px;
+    height: 15px;
+    background: #282f59;
+    border-radius: 50%;
+    margin: 5px;
+    transition: transform 0.5s;
+  }
+  .checkbox {
+    opacity: 0;
+    position: absolute;
+  }
+  .checkbox:checked ~ .label {
+    background: #282f59;
+  }
+  .checkbox:checked ~ .label .ball {
+    background-color: whitesmoke;
+    transform: translateX(25px);
+  }
+  /* Dark mode colors */
+  body.dark {
+    background: #282f59;
+  }
+  body.dark p {
+    color: #cbcdda;
+  }
+  body.dark h1 {
+    color: whitesmoke;
+  }
+  body.dark .team h1 {
+    color: #282f59;
+  }
+  
+  body.dark .footer h4 {
+    color: #cbcdda;
+  }
+  body.dark .copyright {
+    color: #cbcdda;
+  }
+  body.dark .circle {
+    opacity: 0.5;
+  }
+  body.dark a {
+    color: whitesmoke;
+  }
+  body.dark .team .team-h1 {
+    color: whitesmoke;
+  }
+  .team {
+    margin-top: 80px;
+    text-align: center;
+  }
+      
+  .footer {
+    margin-top: 80px;
+    background-image: url("./images/footer-agency.png");
+    background-size: cover;
+  }
+  .col-4 {
+    min-height: 200px;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .footer1 h1 {
+    font-size: 40px;
+    margin-bottom: 30px;
+  }
+  .footer1 i {
+    margin: 50px 20px;
+    font-size: 25px;
+    color: grey;
+  }
+  .footer2 h4,
+  .footer3 h4,
+  .footer4 h4 {
+    color: grey;
+    font-weight: 400;
+    font-size: 20px;
+  }
+  .footer hr {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .contact-container {
+    border-top: 2px solid rgba(85, 85, 85, 0.5); /* Semi-transparent border */
+    height: 100vh;
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center;
+    padding-top: 40px; /* Less padding to make it visually larger */
+    background-color: rgba(255, 255, 255, 0.8); /* Transparent background */
+}
+
+.contact-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent white box */
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Softer, larger shadow */
+    max-width: 800px; /* Increased width */
+    width: 90%; /* Responsive sizing */
+}
+
+.contact-left h4 {
+    font-size: 2rem; /* Larger heading */
+    color: #333; /* Slightly darker color for contrast */
+    margin: 15px 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Optional styling for text */
+.contact-left p {
+    font-size: 1.1rem;
+    color: #333; /* Slightly darker text */
+    line-height: 1.7;
+    text-align: center;
+    max-width: 600px;
+}
+
+.contact-left button {
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    background-color: #4642FF; /* Transparent button */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-left button:hover {
+    background-color: rgba(0, 86, 179, 0.8); /* Darker on hover */
+}
+.contact-left input,
+.contact-left textarea {
+    width: 100%; /* Full width within the container */
+    max-width: 600px; /* Fixed max width for better alignment */
+    padding: 12px 15px; /* Add padding for better readability */
+    font-size: 1rem;
+    color: #333; /* Text color */
+    background-color: rgba(255, 255, 255, 0.8); /* Light background with transparency */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 8px; /* Rounded corners for a modern look */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle inner shadow */
+    margin-bottom: 15px; /* Space between fields */
+    transition: border-color 0.3s ease; /* Smooth transition for border on focus */
+}
+
+.contact-left input:focus,
+.contact-left textarea:focus {
+    border-color: #007bff; /* Highlight border on focus */
+    outline: none; /* Remove default outline */
+}
+
+.contact-left textarea {
+    resize: none; /* Disable resizing */
+    height: 150px; /* Fixed height */
+}
+
+/* Optional: Style the submit button */
+.contact-left button {
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    background-color: rgba(0, 123, 255, 0.8); /* Transparent button */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-left button:hover {
+    background-color: rgba(0, 86, 179, 0.8); /* Darker on hover */
+}
+h2{
+    color: #4642FF;
+}

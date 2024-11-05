@@ -1,0 +1,306 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
+
+/* Global */
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+body h1 {
+  color: #282f59;
+}
+body p {
+  color: #7c7c7c;
+}
+body a {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+/* Header */
+header {
+    
+  background-size: 100%;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+.navbar {
+    background: #4642FF;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  padding: 10px 50px;
+  align-items: center;
+}
+.navbar ul {
+  flex: 1;
+  text-align: right;
+}
+.navbar ul li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 25px;
+}
+
+.logo {
+  width: 180px;
+}
+.ctn {
+  padding: 10px 20px;
+  background:#4642FF;
+  border-radius: 50px;
+}
+.ctn:hover {
+  background: linear-gradient(
+    to bottom right,
+    rgb(95, 92, 255),
+    rgb(187, 145, 255)
+  );
+}
+.row {
+  display: flex;
+  align-items: center;
+  padding-top: 5rem;
+}
+.header-content,
+.hero-img {
+  flex-basis: 50%;
+  padding: 8rem;
+}
+.header-content h1 {
+  font-size: 6vmin;
+  margin-bottom: 30px;
+  margin-top: 7rem;
+  color: #4642ff;
+}
+.header-content p {
+  margin-bottom: 30px;
+}
+#scrolltp {
+    color: white;
+    background: tomato;
+    padding: 15px;
+    border-radius: 50%;
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    cursor: pointer;
+    transition: opacity 0.5s;
+  }
+  .theme {
+    position: absolute;
+    top: 30px;
+    left: 30%;
+  }
+  .label {
+    width: 50px;
+    height: 20px;
+    background: rgb(235, 235, 235);
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+    cursor: pointer;
+  }
+  .label .ball {
+    width: 15px;
+    height: 15px;
+    background: #282f59;
+    border-radius: 50%;
+    margin: 5px;
+    transition: transform 0.5s;
+  }
+  .checkbox {
+    opacity: 0;
+    position: absolute;
+  }
+  .checkbox:checked ~ .label {
+    background: #282f59;
+  }
+  .checkbox:checked ~ .label .ball {
+    background-color: whitesmoke;
+    transform: translateX(25px);
+  }
+  /* Dark mode colors */
+  body.dark {
+    background: #282f59;
+  }
+  body.dark p {
+    color: #cbcdda;
+  }
+  body.dark h1 {
+    color: whitesmoke;
+  }
+  body.dark .team h1 {
+    color: #282f59;
+  }
+  
+  body.dark .footer h4 {
+    color: #cbcdda;
+  }
+  body.dark .copyright {
+    color: #cbcdda;
+  }
+  body.dark .circle {
+    opacity: 0.5;
+  }
+  body.dark a {
+    color: whitesmoke;
+  }
+  body.dark .team .team-h1 {
+    color: whitesmoke;
+  }
+  .team {
+    margin-top: 80px;
+    text-align: center;
+  }
+  
+  .team-h1 {
+    font-size: 40px;
+    margin-bottom: 50px;
+    color: #333;
+  }
+  
+  .team .grid-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    background: var(--gradient-2);
+    padding: 4rem;
+    justify-content: center;
+  }
+  
+  .team-mem-container {
+    flex: 1 1 300px;
+    max-width: 300px;
+  }
+  
+  .team-mem {
+    background: linear-gradient(135deg, #f6d365, #fda085);
+    width: 300px; /* Fixed width for uniformity */
+    height: 400px; /* Fixed height for uniformity */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    transition: transform 1s ease, box-shadow 0.5s ease;
+  }
+  
+  .team-mem:hover {
+    transform: translateY(-20px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .team-mem h2 {
+    color: #555;
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+  
+  .team-mem i {
+    color: black; /* Icon color */
+    font-size: 24px; /* Consistent size */
+    margin: 20px;
+    transition: transform 0.5s ease, color 0.5s ease;
+    cursor: pointer;
+  }
+  
+  .team-mem i:hover {
+    color: #2a6fb4; /* Slightly darker blue on hover */
+    transform: scale(1.4);
+  }
+  
+  .team-mem img {
+    width: 100px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+  }
+  .about-us {
+    padding: 20px 20px; /* Reduced padding to bring it up */
+    text-align: center;
+    background: transparent;
+    margin-top: 20px;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .about-heading {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+    background: transparent;
+  }
+  
+  .about-description {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px; /* Reduced spacing */
+    background: transparent;
+  }
+  
+  .about-mission {
+    padding: 30px; /* Increased padding for more space */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9; /* Light background to separate the mission box */
+    margin-top: 30px; /* Extra margin to separate it from the description */
+  }
+  
+  .about-mission h3 {
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .about-mission p {
+    color: #555;
+    font-size: 16px;
+  }
+    
+  .footer {
+    margin-top: 80px;
+    background-image: url("./images/footer-agency.png");
+    background-size: cover;
+  }
+  .col-4 {
+    min-height: 200px;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .footer1 h1 {
+    font-size: 40px;
+    margin-bottom: 30px;
+  }
+  .footer1 i {
+    margin: 50px 20px;
+    font-size: 25px;
+    color: grey;
+  }
+  .footer2 h4,
+  .footer3 h4,
+  .footer4 h4 {
+    color: grey;
+    font-weight: 400;
+    font-size: 20px;
+  }
+  .footer hr {
+    width: 90%;
+    margin: 0 auto;
+  }
+    
