@@ -1,3 +1,4 @@
+from datetime import datetime, timedelta
 import backtrader as bt
 import numpy as np
 import yfinance as yf
@@ -141,17 +142,23 @@ class BuyAndHoldStrategy(bt.Strategy):
 
 @app.post("/run-strategy")
 async def run_strategy(ticker: str = "HCC.NS", date: str = "2024-09-23", iterations: int = 50):
-    end_date = "2024-09-26"
-    data = yf.download(ticker, start=date, end=end_date, interval="1m")
+    # Calculate the start date as the day before the specified date
+    date_obj = datetime.strptime(date, "%Y-%m-%d")
+    start_date = (date_obj - timedelta(days=1)).strftime("%Y-%m-%d")
+    end_date = date
+
+    # Fetch data from T-1 to T (start_date to date)
+    data = yf.download(ticker, start=start_date, end=end_date, interval="1m")
 
     if data.empty:
-        raise HTTPException(status_code=400, detail="No data found for the given ticker and date")
+        raise HTTPException(status_code=400, detail="No data found for the given ticker and date range")
 
     data_feed = bt.feeds.PandasData(dataname=data)
 
     best_qlearning_pnl = -np.inf
     best_strategy = None
 
+    # Run the Q-learning strategy multiple times to find the best iteration
     for i in range(iterations):
         q_table = defaultdict(lambda: np.full(3, 1/3))
 
@@ -167,16 +174,19 @@ async def run_strategy(ticker: str = "HCC.NS", date: str = "2024-09-23", iterati
             best_qlearning_pnl = qlearning_pnl
             best_strategy = strategy
 
+    # Run Buy-and-Hold strategy for the same date range
     cerebro_bh = bt.Cerebro()
     cerebro_bh.addstrategy(BuyAndHoldStrategy)
     cerebro_bh.adddata(data_feed)
     cerebro_bh.broker.set_cash(data['Close'].iloc[0] * 100)
     cerebro_bh.run()
 
+    # Calculate Buy-and-Hold PnL
     bh_initial_value = data['Close'].iloc[0] * 100
     bh_final_value = cerebro_bh.broker.getvalue()
     bh_pnl = (bh_final_value - bh_initial_value) / bh_initial_value * 100
 
+    # Prepare response
     response = {
         "best_qlearning_pnl": best_qlearning_pnl,
         "buy_and_hold_pnl": bh_pnl
