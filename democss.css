@@ -159,11 +159,45 @@ header {
   body.dark .team .team-h1 {
     color: whitesmoke;
   }
-  .team {
-    margin-top: 80px;
+
+  .about-us {
+    padding: 20px 20px; /* Reduced padding to bring it up */
     text-align: center;
+    background: transparent;
+    margin-top: 20px;
   }
-      
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 50px;
+    max-height: 800px;
+  }
+  
+  .about-heading {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+    background: transparent;
+  }
+  
+  .about-description {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px; /* Reduced spacing */
+    background: transparent;
+  }
+    
+  .about-mission h3 {
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .about-mission p {
+    color: #555;
+    font-size: 16px;
+  }
+    
   .footer {
     margin-top: 80px;
     background-image: url("./images/footer-agency.png");
@@ -195,4 +229,50 @@ header {
   .footer hr {
     width: 90%;
     margin: 0 auto;
+  }
+  .about-mission {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    margin-top: 30px;
+    height: 200px; /* Optional: Adjust this to control the vertical centering space */
+  }
+  
+  .about-description input[type="text"] {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 50%;
+    max-width: 300px;
+}
+.about-content #results {
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  margin-top: 1rem; /* Space between results and loader */
+  text-align: center;
+}
+  
+  /* Safari */
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
   }
