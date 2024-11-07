@@ -262,11 +262,13 @@ header {
   }
   
   .about-mission h3 {
+    font-size: 36px;
     color: #333;
     margin-bottom: 10px;
   }
   
   .about-mission p {
+    font-size: 18px;
     color: #555;
     font-size: 16px;
   }

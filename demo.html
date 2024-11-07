@@ -12,8 +12,8 @@
             <ul class="nav-list">
                 <li><a href="index.html">Home</a></li> 
                 <li><a href="aboutus.html">About Us</a></li>                      
-                <li><a href="demo.html">SattaBot</a></li> 
-                <li><a class="ctn" href="contactus.html">Contact Us</a></li>                                       
+                <li><a href="demo.html">Try it out</a></li> 
+                <li><a href="contactus.html">Contact Us</a></li>                                       
             </ul>
         </nav>
 
@@ -21,16 +21,19 @@
             <div class="container">
                 <h2 class="about-heading">Demo</h2>
                 <p class="about-description">
-                    <input type="text" placeholder="enter the name of the stock" id="stock">
+                    <input type="text" placeholder="Enter the name of the stock" id="stock">
                     <button class="ctn" id="submitBtn">Submit</button>
+                    <br>
+                    <h3>Results</h3>
+
                 </p>
         
                 <div class="about-content">
                     <div class="about-mission">
-                        <h3>Results</h3>
                         <hr>
                         <br>
                         <div id="results"></div> <!-- Results will display here -->
+                        <br>
                         <div id="loader" class="loader" style="display: none;"></div> <!-- Loader below results -->
                     </div>
                 </div>
@@ -40,14 +43,13 @@
         <section class="footer">
             <div class="grid-wrapper">
                 <div class="col-4">
-                    <h1>SattaBot</h1>
-                    <p>This bot was named Satta-Bot solely for informational and entertainment purposes. We do not encourage or endorse any form of gambling. Users are responsible for their own actions and must comply with all local laws and regulations regarding algorithmic trading. Use this bot at your own risk; the company cannot be held responsible for any losses incurred.</p>
+                    <p><b>DISCLAIMER:</b>This bot was named Satta-Bot solely for informational and entertainment purposes. We do not encourage or endorse any form of gambling. Users are responsible for their own actions and must comply with all local laws and regulations regarding algorithmic trading. Use this bot at your own risk; the company cannot be held responsible for any losses incurred.</p>
                 </div>
             </div>
         </section>
 
-        <script>
-            async function fetchStrategyResults(ticker) {
+           <script>
+    async function fetchStrategyResults(ticker) {
                 const resultsElement = document.getElementById('results');
                 const loader = document.getElementById('loader');
                 loader.style.display = 'block'; // Show the loader
@@ -81,11 +83,13 @@
             document.getElementById('submitBtn').addEventListener('click', () => {
                 const selectedStock = document.getElementById('stock').value;
                 if (selectedStock !== "default") {
-                    fetchStrategyResults(selectedStock);
+                    fetchStrategyResults(selectedStock);s
                 } else {
                     alert('Please select a stock');
                 }
             });
-        </script>
+</script>
+
+
     </body>
 </html>
